@@ -15,19 +15,6 @@
       crossorigin
       src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
     ></script>
-    <script>
-      // console.log(React,ReactDOM) /*testiranje da li smo pravilno ukljucili biblioteke*/
-      const App = () => {
-        return React.createElement(
-          "div",
-          {},
-          [React.createElement("h1", {key:2}, "Student"),React.createElement("h1", {key:1}, "Student")]
-        );
-      };
-      ReactDOM.render(
-        React.createElement(App),
-        document.getElementById("root")
-      );
-    </script>
+    <script src="./App.js"></script>
   </body>
 </html>
