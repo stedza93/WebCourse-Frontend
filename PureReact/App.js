@@ -3,9 +3,8 @@
 const Student = (props) => {
   console.log(props);
   return React.createElement("div", {}, [
-    React.createElement("h2", {}, "Marko"),
-    React.createElement("h2", {}, "Maja"),
-    React.createElement("h2", {}, "Mirko"),
+    React.createElement("h2", {}, props.name),
+    React.createElement("h5", {}, props.fakultet),
     React.createElement("hr"),
   ]);
 };
