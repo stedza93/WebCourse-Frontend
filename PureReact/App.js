@@ -1,3 +1,5 @@
+import React from "react";
+import { render } from "react-dom";
 // console.log(React,ReactDOM) /*testiranje da li smo pravilno ukljucili biblioteke*/
 
 const Student = (props) => {
@@ -17,4 +19,4 @@ const App = () => {
     React.createElement(Student, { name: "Mirko", fakultet: "ETF" }),
   ]);
 };
-ReactDOM.render(React.createElement(App), document.getElementById("root"));
+render(React.createElement(App), document.getElementById("root"));
