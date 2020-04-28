@@ -1,24 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import SimpleImageSlider from "react-simple-image-slider";
 
 function App() {
+  const images = [
+    { url: "https://images.wallpaperscraft.com/image/water_glare_sunset_125624_800x600.jpg" },
+    { url: "https://images.wallpaperscraft.com/image/palms_road_marking_123929_800x600.jpg" },
+    { url: "https://images.wallpaperscraft.com/image/lake_mountains_trees_122294_800x600.jpg" }
+];
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <SimpleImageSlider
+                    width={896}
+                    height={504}
+                    images={images}
+                />
     </div>
   );
 }
