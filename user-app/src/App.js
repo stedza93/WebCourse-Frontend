@@ -33,7 +33,8 @@ class App extends React.Component {
     console.log(prevProps, prevState, this.state);
   }
   usersToShow() {
-    let allUsers = this.state.allUsers;
+    let counter = this.state.counter;
+    let allUsers = this.state.allUsers.slice(counter, counter + 1);
     return allUsers.map((el, index) => {
       return <User userInfo={el} key={index}></User>;
     });
