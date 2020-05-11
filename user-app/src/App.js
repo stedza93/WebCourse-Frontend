@@ -7,7 +7,7 @@ function App() {
     myArray = [1, 2, 3],
     myObject = { name: "John", job: "Developer" };
   return (
-    <div>
+    <div style="background:red;">
       <ul>
         <li>{text}</li>
         <li>{myNumber}</li>
