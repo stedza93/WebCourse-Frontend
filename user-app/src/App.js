@@ -47,6 +47,9 @@ class App extends React.Component {
     this.setState({ counter });
     console.log(counter);
   }
+  handleSearchChange= ()=>{
+    console.log("promijenjen")
+  }
   // const text = "Hello world!",
   //   myNumber = 123,
   //   myArray = [1, 2, 3],
@@ -84,6 +87,14 @@ class App extends React.Component {
       //   <input type="text" id="name"></input>
       // </div>
       <div style={{ padding: "20px" }}>
+        <div className="ui icon input">
+          <input
+            type="text"
+            placeholder="Search..."
+            onChange={this.handleSearchChange}
+          />
+          <i className="inverted circular search link icon"></i>
+        </div>
         <button
           className="ui right labeled icon button"
           style={{ margin: "20px" }}
