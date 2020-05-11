@@ -13,6 +13,7 @@ class App extends React.Component {
       },
       allUsers: [],
     };
+    this.setCounter = this.setCounter.bind(this);
   }
   componentDidMount() {
     fetch("https://jsonblob.com/api/16de3326-8d42-11ea-91b5-63d2dfd126db")
@@ -36,9 +37,9 @@ class App extends React.Component {
       return <User userInfo={el} key={index}></User>;
     });
   }
-  setCounter = () => {
+  setCounter() {
     console.log(this);
-  };
+  }
   // const text = "Hello world!",
   //   myNumber = 123,
   //   myArray = [1, 2, 3],
