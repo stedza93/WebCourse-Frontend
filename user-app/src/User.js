@@ -1,17 +1,17 @@
 import React from "react";
-export function User() {
+export function User(props) {
   return (
     <div className="card">
       <div className="image">
         <img src="https://semantic-ui.com/images/avatar2/large/matthew.png" />
       </div>
       <div className="content">
-        <div className="header">Matt Giampietro</div>
+        <div className="header">{props.userInfo.name}</div>
         <div className="meta">
-          <a>Friends</a>
+          <a>{props.userInfo.job}</a>
         </div>
         <div className="description">
-          Matthew is an interior designer living in New York.
+        {props.userInfo.bio}
         </div>
       </div>
       <div className="extra content">

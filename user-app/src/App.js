@@ -29,9 +29,7 @@ function App() {
     // </div>
     <div>
       <div className="ui link cards">
-        <User></User>
-        <User></User>
-        <User></User>
+        <User userInfo={{name:"John", job:"Developer", bio:"Matthew is an interior designer living in New York."}}></User>
       </div>
     </div>
   );
