@@ -13,7 +13,7 @@ function App() {
       color: "#fff",
     };
   return (
-    <div style={containerStyle}>
+    <div style={containerStyle} className="container-wrapper">
       <ul>
         <li>{text}</li>
         <li>{myNumber}</li>
@@ -24,6 +24,8 @@ function App() {
         </li>
         {myNumber === 123 ? "Tacan broj" : "Pogresan broj"}
       </ul>
+      <label htmlFor="name">Name:</label> <br></br>
+      <input type="text" id="name"></input>
     </div>
   );
 }
