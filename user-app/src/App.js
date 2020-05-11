@@ -5,6 +5,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      counter: 0,
       loading: true,
       userInfo: {
         name: "John",
@@ -38,7 +39,9 @@ class App extends React.Component {
     });
   }
   setCounter() {
-    console.log(this);
+    let counter = this.state.counter + 1;
+    this.setState({ counter });
+    console.log(counter);
   }
   // const text = "Hello world!",
   //   myNumber = 123,
