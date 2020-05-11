@@ -5,7 +5,11 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      userInfo: null,
+      userInfo: {
+        name: "John",
+        job: "Developer",
+        bio: "Matthew is an interior designer living in New York.",
+      }
     };
   }
   // const text = "Hello world!",
@@ -38,11 +42,7 @@ class App extends React.Component {
       <div>
         <div className="ui link cards">
           <User
-            userInfo={{
-              name: "John",
-              job: "Developer",
-              bio: "Matthew is an interior designer living in New York.",
-            }}
+            userInfo={this.state.userInfo}
           ></User>
         </div>
       </div>
