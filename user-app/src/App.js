@@ -72,7 +72,14 @@ class App extends React.Component {
       //   <label htmlFor="name">Name:</label> <br></br>
       //   <input type="text" id="name"></input>
       // </div>
-      <div>
+      <div style={{ padding: "20px" }}>
+        <button
+          className="ui right labeled icon button"
+          style={{ margin: "20px" }}
+        >
+          <i className="right arrow icon"></i>
+          Next
+        </button>
         <div className="ui link cards">{this.usersToShow()}</div>
       </div>
     );
