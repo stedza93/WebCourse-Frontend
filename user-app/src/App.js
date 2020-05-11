@@ -2,8 +2,11 @@ import React from "react";
 import "./App.css";
 import { User } from "./User";
 class App extends React.Component {
-  constructor(props){
-    super(props)
+  constructor(props) {
+    super(props);
+    this.state = {
+      userInfo: null,
+    };
   }
   // const text = "Hello world!",
   //   myNumber = 123,
@@ -16,6 +19,7 @@ class App extends React.Component {
   //     color: "#fff",
   //   };
   render() {
+    console.log(this.state);
     return (
       // <div style={containerStyle} className="container-wrapper">
       //   <ul>
