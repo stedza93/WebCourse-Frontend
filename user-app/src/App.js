@@ -7,7 +7,14 @@ function App() {
     myArray = [1, 2, 3],
     myObject = { name: "John", job: "Developer" };
   return (
-    <div style="background:red;">
+    <div
+      style={{
+        background: "red",
+        marginTop: "20px",
+        padding: "20px",
+        color: "#fff",
+      }}
+    >
       <ul>
         <li>{text}</li>
         <li>{myNumber}</li>
@@ -16,7 +23,7 @@ function App() {
         <li>
           Name: {myObject.name}, Job: {myObject.job}
         </li>
-        {myNumber===123?"Tacan broj": "Pogresan broj"}
+        {myNumber === 123 ? "Tacan broj" : "Pogresan broj"}
       </ul>
     </div>
   );
