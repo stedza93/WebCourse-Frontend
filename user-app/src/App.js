@@ -11,17 +11,20 @@ class App extends React.Component {
         bio: "Matthew is an interior designer living in New York.",
       },
     };
+  
+  }
+  componentDidMount(){
     fetch("https://jsonblob.com/api/16de3326-8d42-11ea-91b5-63d2dfd126db")
-      .then((response) => {
-        return response.json();
-      })
-      .then((response) => {
-        console.log(response);
-        this.setState({userInfo:response[0]})
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+    .then((response) => {
+      return response.json();
+    })
+    .then((response) => {
+      console.log(response);
+      this.setState({userInfo:response[0]})
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
   }
   // const text = "Hello world!",
   //   myNumber = 123,
@@ -34,7 +37,6 @@ class App extends React.Component {
   //     color: "#fff",
   //   };
   render() {
-    console.log(this.state);
     return (
       // <div style={containerStyle} className="container-wrapper">
       //   <ul>
