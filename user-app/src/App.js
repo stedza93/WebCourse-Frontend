@@ -26,6 +26,10 @@ class App extends React.Component {
       console.log(error);
     });
   }
+  componentDidUpdate(prevProps,prevState){
+    console.log(prevProps, prevState, this.state)
+
+  }
   // const text = "Hello world!",
   //   myNumber = 123,
   //   myArray = [1, 2, 3],
