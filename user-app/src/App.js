@@ -36,9 +36,9 @@ class App extends React.Component {
       return <User userInfo={el} key={index}></User>;
     });
   }
-  setCounter(){
-    console.log(this)
-  }
+  setCounter = () => {
+    console.log(this);
+  };
   // const text = "Hello world!",
   //   myNumber = 123,
   //   myArray = [1, 2, 3],
