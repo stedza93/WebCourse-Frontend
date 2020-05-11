@@ -5,6 +5,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      loading: true,
       userInfo: {
         name: "John",
         job: "Developer",
@@ -20,7 +21,7 @@ class App extends React.Component {
       })
       .then((response) => {
         let allUsers = response;
-        this.setState({ allUsers });
+        this.setState({ allUsers, loading: false });
       })
       .catch(function (error) {
         console.log(error);
@@ -46,6 +47,16 @@ class App extends React.Component {
   //     color: "#fff",
   //   };
   render() {
+    if (this.state.loading === true) {
+      return (
+        <div className="ui segment" style={{ width: "100%", height: "100vh" }}>
+          <div className="ui active dimmer">
+            <div className="ui indeterminate text loader">Preparing Files</div>
+          </div>
+          <p></p>
+        </div>
+      );
+    }
     return (
       // <div style={containerStyle} className="container-wrapper">
       //   <ul>
@@ -62,9 +73,7 @@ class App extends React.Component {
       //   <input type="text" id="name"></input>
       // </div>
       <div>
-        <div className="ui link cards">
-          {this.usersToShow()}
-        </div>
+        <div className="ui link cards">{this.usersToShow()}</div>
       </div>
     );
   }
