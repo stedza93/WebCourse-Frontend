@@ -40,7 +40,10 @@ class App extends React.Component {
     });
   }
   setCounter() {
-    let counter = this.state.counter + 1;
+    let counter =
+      this.state.allUsers.length > this.state.counter + 1
+        ? this.state.counter + 1
+        : 0;
     this.setState({ counter });
     console.log(counter);
   }
