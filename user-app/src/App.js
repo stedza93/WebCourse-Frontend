@@ -9,8 +9,18 @@ class App extends React.Component {
         name: "John",
         job: "Developer",
         bio: "Matthew is an interior designer living in New York.",
-      }
+      },
     };
+    fetch("https://jsonblob.com/api/16de3326-8d42-11ea-91b5-63d2dfd126db")
+      .then((response) => {
+        return response.json();
+      })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   }
   // const text = "Hello world!",
   //   myNumber = 123,
@@ -41,9 +51,7 @@ class App extends React.Component {
       // </div>
       <div>
         <div className="ui link cards">
-          <User
-            userInfo={this.state.userInfo}
-          ></User>
+          <User userInfo={this.state.userInfo}></User>
         </div>
       </div>
     );
