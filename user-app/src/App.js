@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
@@ -13,10 +12,11 @@ function App() {
         <li>{text}</li>
         <li>{myNumber}</li>
         <li>{myArray}</li>
-        {/* <li>{myObject}</li> */}
+        {/* <li>{myObject}</li>  greska, ne moze prikazati objekat*/}
         <li>
           Name: {myObject.name}, Job: {myObject.job}
         </li>
+        {myNumber===123?"Tacan broj": "Pogresan broj"}
       </ul>
     </div>
   );
