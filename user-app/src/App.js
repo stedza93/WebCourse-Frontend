@@ -10,25 +10,30 @@ class App extends React.Component {
         job: "Developer",
         bio: "Matthew is an interior designer living in New York.",
       },
+      allUsers: [],
     };
-  
   }
-  componentDidMount(){
+  componentDidMount() {
     fetch("https://jsonblob.com/api/16de3326-8d42-11ea-91b5-63d2dfd126db")
-    .then((response) => {
-      return response.json();
-    })
-    .then((response) => {
-      console.log(response);
-      this.setState({userInfo:response[0]})
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+      .then((response) => {
+        return response.json();
+      })
+      .then((response) => {
+        let allUsers = response;
+        this.setState({ allUsers });
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   }
-  componentDidUpdate(prevProps,prevState){
-    console.log(prevProps, prevState, this.state)
-
+  componentDidUpdate(prevProps, prevState) {
+    console.log(prevProps, prevState, this.state);
+  }
+  usersToShow() {
+    let allUsers = this.state.allUsers;
+    return allUsers.map((el, index) => {
+      return <User userInfo={el} key={index}></User>;
+    });
   }
   // const text = "Hello world!",
   //   myNumber = 123,
@@ -58,7 +63,7 @@ class App extends React.Component {
       // </div>
       <div>
         <div className="ui link cards">
-          <User userInfo={this.state.userInfo}></User>
+          {this.usersToShow()}
         </div>
       </div>
     );

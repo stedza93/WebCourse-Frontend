@@ -3,7 +3,7 @@ export function User(props) {
   return (
     <div className="card">
       <div className="image">
-        <img src="https://semantic-ui.com/images/avatar2/large/matthew.png" />
+        <img src={props.userInfo.avatar_url} />
       </div>
       <div className="content">
         <div className="header">{props.userInfo.name}</div>
