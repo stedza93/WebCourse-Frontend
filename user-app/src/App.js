@@ -34,8 +34,12 @@ class App extends React.Component {
     console.log(prevProps, prevState, this.state);
   }
   usersToShow() {
-    let counter = this.state.counter;
-    let allUsers = this.state.allUsers.slice(counter, counter + 1);
+    // let counter = this.state.counter;
+    // let allUsers = this.state.allUsers.slice(counter, counter + 1);
+    let userInput = this.state.userInput;
+    let allUsers = this.state.allUsers.filter(
+      (el) => el.login.indexOf(userInput) >= 0
+    );
     return allUsers.map((el, index) => {
       return <User userInfo={el} key={index}></User>;
     });
