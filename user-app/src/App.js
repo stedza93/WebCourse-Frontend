@@ -5,6 +5,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      userInput: "",
       counter: 0,
       loading: true,
       userInfo: {
@@ -47,9 +48,11 @@ class App extends React.Component {
     this.setState({ counter });
     console.log(counter);
   }
-  handleSearchChange= ()=>{
-    console.log("promijenjen")
-  }
+  handleSearchChange = (e) => {
+    console.log(e.target.value);
+    let userInput = e.target.value;
+    this.setState({ userInput });
+  };
   // const text = "Hello world!",
   //   myNumber = 123,
   //   myArray = [1, 2, 3],
