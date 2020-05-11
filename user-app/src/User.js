@@ -8,17 +8,17 @@ export function User(props) {
       <div className="content">
         <div className="header">{props.userInfo.name}</div>
         <div className="meta">
-          <a>{props.userInfo.job}</a>
+          <a>Username: {props.userInfo.login}</a>
         </div>
         <div className="description">
         {props.userInfo.bio}
         </div>
       </div>
       <div className="extra content">
-        <span className="right floated">Joined in 2013</span>
+        <span className="right floated">Repos: {props.userInfo.public_repos}</span>
         <span>
           <i className="user icon"></i>
-          75 Friends
+          {props.userInfo.followers}
         </span>
       </div>
     </div>

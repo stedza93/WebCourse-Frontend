@@ -17,6 +17,7 @@ class App extends React.Component {
       })
       .then((response) => {
         console.log(response);
+        this.setState({userInfo:response[0]})
       })
       .catch(function (error) {
         console.log(error);
