@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link,NavLink } from "react-router-dom";
 function Navbar() {
   return (
     <nav>
@@ -15,7 +15,7 @@ function Navbar() {
             <Link to="/about">About</Link>
           </li>
           <li>
-            <Link to="/contact">Contact</Link>
+            <NavLink to={{ pathname: "/contact", josNesto: true }}>Contact</NavLink>
           </li>
         </ul>
       </div>
