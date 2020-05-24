@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+</head>
+<body>
+    Index<br /><br />
+    <button onclick="myFunction()">Replace State</button> <br /><br />
+    <script>
+        function myFunction() {
+          const stateObj = { foo: "bar" };
+          history.replaceState(stateObj, "", "page.html");
+        }
+      </script>
+</body>
+</html>
