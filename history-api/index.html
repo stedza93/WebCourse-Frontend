@@ -8,11 +8,16 @@
 <body>
     Index<br /><br />
     <button onclick="myFunction()">Replace State</button> <br /><br />
+    <button onclick="myFunction2()">Push state</button>
     <script>
         function myFunction() {
           const stateObj = { foo: "bar" };
           history.replaceState(stateObj, "", "page.html");
         }
+        function myFunction2() {
+        const stateObj = { foo: "bar" };
+        history.pushState(stateObj, "", "page.html");
+      }
       </script>
 </body>
 </html>
