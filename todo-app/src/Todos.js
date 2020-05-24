@@ -1,6 +1,18 @@
 import React from 'react';
-const Todos = (props) => {
-    console.log(props.todos)
+const Todos = ({todos}) => {
+   console.log(todos)
+    const todoList = todos.length ? (
+        todos.map((todo) => {
+          return (
+            <div className="collection-item" key={todo.id}>
+              <span>{todo.content}</span>
+              <input type="checkbox" checked={todo.checked}></input>
+            </div>
+          );
+        })
+      ) : (
+        <p className="center">Svi taskovi su zavrseni</p>
+      );
     return ( <div className="collection">
       <div className="collection-item">Alvin</div>
     </div> );
