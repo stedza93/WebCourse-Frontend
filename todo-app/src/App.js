@@ -9,6 +9,12 @@ class App extends React.Component {
       { id: 2, content: "Prosetaj psa" },
     ],
   };
+  // Zadatak 1:
+  // Dodati kod za brisanje elementa
+  
+  // Zadatak2:
+  // Dodati kod za filtriranje elemenata liste
+
   addTodo = (e) => {
     e.preventDefault();
     let newTodos = this.state.todos;
