@@ -11,7 +11,7 @@ function App() {
     <BrowserRouter>
     <div className="App">
       <Navbar></Navbar>
-      <Route path="/" component={Home}></Route>
+      <Route exact path="/" component={Home}></Route>
       <Route
         path="/about"
         render={() => <About title="About Us"></About>}
