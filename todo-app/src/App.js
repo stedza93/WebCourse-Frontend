@@ -13,7 +13,7 @@ class App extends React.Component {
     return (
       <div className="container">
         <h1 className="center">Todo List</h1>
-        <Todos></Todos>
+        <Todos todos={this.state.todos}></Todos>
       </div>
     );
   }
