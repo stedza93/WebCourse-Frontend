@@ -1,4 +1,5 @@
 import React from "react";
+import Todos from "./Todos";
 
 class App extends React.Component {
   state = {
@@ -9,7 +10,12 @@ class App extends React.Component {
     ],
   };
   render() {
-    return <div className="App"></div>;
+    return (
+      <div className="container">
+        <h1 className="center">Todo List</h1>
+        <Todos></Todos>
+      </div>
+    );
   }
 }
 
