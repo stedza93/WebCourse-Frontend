@@ -3,16 +3,22 @@ import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Contact from "./components/Contact";
 import About from "./components/About";
+import { BrowserRouter, Route } from "react-router-dom";
 import "./App.css";
 
 function App() {
   return (
+    <BrowserRouter>
     <div className="App">
-       <Navbar></Navbar>
-      <Home></Home>
-      <Contact></Contact>
-      <About></About>
+      <Navbar></Navbar>
+      <Route path="/" component={Home}></Route>
+      <Route
+        path="/about"
+        render={() => <About title="About Us"></About>}
+      ></Route>
+      <Route path="/contact" component={Contact}></Route>
     </div>
+    </BrowserRouter>
   );
 }
 
