@@ -7,7 +7,9 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Users></Users>
+     <BrowserRouter>
+          <Route path="/(users|user|accounts)/" component={Users} />
+        </BrowserRouter>
       </div>
     );
   }
