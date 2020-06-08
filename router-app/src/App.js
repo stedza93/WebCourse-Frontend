@@ -5,9 +5,18 @@ import { Dashboard } from "./components/Dashboard";
 import { PrivateRoute } from "./PrivateRoute";
 import { auth } from "./auth/authService";
 class App extends React.Component {
-  state={
-    isAuth:auth.getAuthStatus()
-  }
+  state = {
+    isAuth: auth.getAuthStatus(),
+  };
+  toggleAuth = (isAuth) => {
+    if(isAuth){
+      auth.login();
+      this.setState({isAuth})
+    }
+    else{
+      auth.logout()
+    }
+  };
   render() {
     return (
       <div className="App">
@@ -17,12 +26,15 @@ class App extends React.Component {
           >
             <Link to="/">Home</Link>
             <Link to="/dashboard">Dashboard</Link>
-            <button onClick={()=>auth.login()}>Login</button>
-            <button onClick={()=>auth.logout()}>Logout</button>
+           {this.state.isAuth?<button onClick={()=>this.toggleAuth(false)}>Logout</button>:<button onClick={() => this.toggleAuth(true)}>Login</button>} 
+          
           </div>
           <Switch>
             <Route exact path="/" component={Home}></Route>
-            <PrivateRoute component={Dashboard} path="/dashboard"></PrivateRoute>
+            <PrivateRoute
+              component={Dashboard}
+              path="/dashboard"
+            ></PrivateRoute>
             <Route path="/dashboard" component={Dashboard}></Route>
           </Switch>
         </BrowserRouter>
