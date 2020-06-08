@@ -8,9 +8,11 @@ class AuthService {
     setJwt(token) {
       apiCall.defaults.headers.common["Authorization"] = `Bearer ${token}`;
     }
-    login() {
-      this.isAuthenticated = true;
-      alert('Ulogovan')
+    async login() {
+      const { data } = await apiCall("jwt");
+      console.log(data);
+      localStorage.setItem("token", data.token);
+      this.setJwt(data.token);
     }
     logout() {
       this.isAuthenticated = false;
