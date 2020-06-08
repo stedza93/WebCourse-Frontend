@@ -5,6 +5,9 @@ import { Dashboard } from "./components/Dashboard";
 import { PrivateRoute } from "./PrivateRoute";
 import { auth } from "./auth/authService";
 class App extends React.Component {
+  state={
+    isAuth:auth.getAuthStatus()
+  }
   render() {
     return (
       <div className="App">
@@ -15,6 +18,7 @@ class App extends React.Component {
             <Link to="/">Home</Link>
             <Link to="/dashboard">Dashboard</Link>
             <button onClick={()=>auth.login()}>Login</button>
+            <button onClick={()=>auth.logout()}>Logout</button>
           </div>
           <Switch>
             <Route exact path="/" component={Home}></Route>
