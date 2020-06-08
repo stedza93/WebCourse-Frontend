@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
 import { Home } from "./components/Home";
 import { Dashboard } from "./components/Dashboard";
+import { PrivateRoute } from "./PrivateRoute";
 
 class App extends React.Component {
   render() {
@@ -16,6 +17,7 @@ class App extends React.Component {
           </div>
           <Switch>
             <Route exact path="/" component={Home}></Route>
+            <PrivateRoute component={Dashboard} path="/dashboard"></PrivateRoute>
             <Route path="/dashboard" component={Dashboard}></Route>
           </Switch>
         </BrowserRouter>
