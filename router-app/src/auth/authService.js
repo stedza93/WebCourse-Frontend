@@ -15,8 +15,8 @@ class AuthService {
       this.setJwt(data.token);
     }
     logout() {
-      this.isAuthenticated = false;
-      window.location.href="/"
+      localStorage.removeItem("token");
+      window.location.href = "/login";
     }
   }
    export const auth = new AuthService();
