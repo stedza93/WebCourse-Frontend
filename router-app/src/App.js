@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
 import { Home } from "./components/Home";
 import { Dashboard } from "./components/Dashboard";
 import { PrivateRoute } from "./PrivateRoute";
-
+import { auth } from "./auth/authService";
 class App extends React.Component {
   render() {
     return (
@@ -14,6 +14,7 @@ class App extends React.Component {
           >
             <Link to="/">Home</Link>
             <Link to="/dashboard">Dashboard</Link>
+            <button onClick={()=>auth.login()}>Login</button>
           </div>
           <Switch>
             <Route exact path="/" component={Home}></Route>

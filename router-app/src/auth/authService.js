@@ -3,6 +3,7 @@ class AuthService {
     getAuthStatus() {return this.isAuthenticated; }
     login() {
       this.isAuthenticated = true;
+      alert('Ulogovan')
     }
     logout() {
       this.isAuthenticated = false;
