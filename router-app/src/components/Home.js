@@ -7,12 +7,16 @@ export const Home = () => {
   function getMojombo() {
     apiCall('mojombo').then((res) => console.log(res));
    }
+   function getFood(){
+    apiCall('/foods').then(res=>console.log(res))
+}
  
   return (
     <React.Fragment>
       <h1>Home</h1>
-      <button onClick={getAllUsers}> Get all users</button>
-      <button onClick={getMojombo}> Get Mojombo</button>
+      <button onClick={getFood}>Get food</button>
+      {/* <button onClick={getAllUsers}> Get all users</button>
+      <button onClick={getMojombo}> Get Mojombo</button> */}
     </React.Fragment>
   );
 };

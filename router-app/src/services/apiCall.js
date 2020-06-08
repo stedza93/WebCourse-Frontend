@@ -1,5 +1,5 @@
 import axios from "axios";
-const apiUrl = "https://api.github.com/users";
+const apiUrl = "http://localhost:3001/";
 
 const instance= axios.create({
   baseURL: apiUrl
