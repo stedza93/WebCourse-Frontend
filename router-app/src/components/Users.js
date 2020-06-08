@@ -8,7 +8,8 @@ export class Users extends React.Component {
     return (
       <div>
         <br />
-        <h1>{this.state.user}</h1>
+        <h1>Users Komponenta</h1>
+        <h2>User:{this.props.match.params.id}</h2>
       </div>
     );
   }
