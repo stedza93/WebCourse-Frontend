@@ -1,10 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 function App() {
   const [counter, setCounter] = useState(0);
   const [search, setSearch] = useState("");
   const [random, setRandom] = useState(() => {
     return Math.random();
   });
+  const inputText = useRef();
+  const savedVar = useRef(1);
+  let myVar=1;
   // useEffect(()=>{
   //   console.log("izvrsena useEffect fja")
   // })
@@ -23,6 +26,8 @@ function App() {
     const intervalId = setTimeout(() => search && searchApi(), 500);
     const searchApi = () => {
       console.log("searching...");
+      myVar++;
+      savedVar.current++;
     };
     return () => {
       console.log(intervalId);
@@ -34,11 +39,12 @@ function App() {
   //   setCounter(2);
   //   setRandom(123);
   // };
-
+  console.log(savedVar,myVar, "use ref vs variable");
   return (
     <div className="App">
       {counter}
-      {/* <button onClick={() => updateCounter()}>Count + 1</button> <br></br> */}
+      <button onClick={() => inputText.current.focus()}>Search </button>{" "}
+      <br></br>
       <button onClick={() => setCounter((prevState) => prevState + 1)}>
         Count + 1
       </button>{" "}
@@ -48,6 +54,7 @@ function App() {
       <br></br>
       <label htmlFor="search">Search</label> <br></br>
       <input
+        ref={inputText}
         type="text"
         id="search"
         value={search}
