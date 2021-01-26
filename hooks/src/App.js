@@ -1,4 +1,5 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { Child } from "./Child";
 function App() {
   const [counter, setCounter] = useState(0);
   const [search, setSearch] = useState("");
@@ -7,7 +8,10 @@ function App() {
   });
   const inputText = useRef();
   const savedVar = useRef(1);
-  let myVar=1;
+  let myVar = 1;
+  const handleClickMeButton = useCallback(() => {
+    console.log("parent log click me function");
+  }, []);
   // useEffect(()=>{
   //   console.log("izvrsena useEffect fja")
   // })
@@ -39,7 +43,7 @@ function App() {
   //   setCounter(2);
   //   setRandom(123);
   // };
-  console.log(savedVar,myVar, "use ref vs variable");
+  console.log(savedVar, myVar, "use ref vs variable");
   return (
     <div className="App">
       {counter}
@@ -60,6 +64,7 @@ function App() {
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
+      <Child handleClickFromChild={handleClickMeButton}></Child>
     </div>
   );
 }
