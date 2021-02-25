@@ -1,4 +1,5 @@
 import "./App.css";
+import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import { User } from "./components/Users";
 import { AuthContextProvider } from "./context/AuthContext";
@@ -10,6 +11,7 @@ function App() {
       <ThemeContextProvider>
         <Header></Header>
         <User></User>
+        <Footer></Footer>
       </ThemeContextProvider>
     </AuthContextProvider>
   );
